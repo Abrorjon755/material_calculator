@@ -1,0 +1,19 @@
+{
+  "@@locale": "en",
+  "materialShapes": "Material Shapes",
+  "rectangle": "Rectangle",
+  "sideA": "A side (mm)",
+  "sideB": "B side (mm)",
+  "sideD": "D side (mm)",
+  "sideS": "S side (mm)",
+  "length": "Length (m)",
+  "pleaseFill": "Please enter size",
+  "result": "Result",
+  "resultIs": "Result is: ",
+  "rectangular": "Rectangular",
+  "circle": "Circle",
+  "settings": "Settings",
+  "language": "Language",
+  "kg": " KG",
+  "history": "History"
+}

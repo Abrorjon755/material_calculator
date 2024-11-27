@@ -1,0 +1,18 @@
+{
+  "@@locale": "uz",
+  "materialShapes": "Material shakllari",
+  "rectangle": "Kvadrat",
+  "sideA": "A tomoni (mm)",
+  "sideB": "B tomoni (mm)",
+  "sideD": "D tomoni (mm)",
+  "sideS": "S tomoni (mm)",
+  "length": "Uzunlik (m)",
+  "pleaseFill": "Iltimos, o‘lchamni kiriting",
+  "result": "Natija",
+  "resultIs": "Natija: ",
+  "rectangular": "To‘rtburchak",
+  "circle": "Doira",
+  "settings": "Sozlamalar",
+  "language": "Til",
+  "kg": " KG"
+}
