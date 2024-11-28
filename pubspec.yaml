@@ -12,29 +12,33 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Design
+  
   cupertino_icons: ^1.0.8
   font_awesome_flutter: ^10.8.0
 
-  # Localization
+  
   flutter_localizations:
     sdk: flutter
   intl: any
 
-  # Provider
+  
   provider: ^6.1.2
 
-  # Router
+  
   go_router: ^14.6.1
 
-  # Storage
+  
   shared_preferences: ^2.3.3
+
+  
+  flutter_native_splash: ^2.4.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
 
 flutter:
 
@@ -48,3 +52,29 @@ flutter_intl:
   main_locale: en
   arb_dir: lib/src/common/l10n/
   output_dir: lib/src/common/l10n/generated/
+  
+flutter_native_splash:
+  color: "#181818"
+  color_dark: "#181818"
+  color_android: "#181818"
+  color_ios: "#181818"
+  image: assets/images/icon.png
+  image_dark: assets/images/icon.png
+  android_12:
+    image: assets/images/icon.png
+    image_dark: assets/images/icon.png
+  android: true
+  ios: true
+
+flutter_launcher_icons:
+  image_path_android: "assets/images/icon.png"
+  image_path_ios: "assets/images/icon.png"
+  android: true
+  ios: true
+  adaptive_icon_background: "assets/images/icon.png" 
+  adaptive_icon_foreground: "assets/images/icon.png" 
+  adaptive_icon_foreground_inset: 16 
+  adaptive_icon_monochrome: "assets/images/icon.png" 
+  min_sdk_android: 21 
+  remove_alpha_ios: true
+  background_color_ios: "#999999"

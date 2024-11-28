@@ -10,5 +10,6 @@ class HistoryModel extends ChangeNotifier {
 
   void getHistory(BuildContext context) {
     list = context.dependency.shp.getStringList(Constants.history) ?? [];
+    list = list.reversed.toList();
   }
 }
