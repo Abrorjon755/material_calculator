@@ -15,14 +15,7 @@ class HistoryModel extends ChangeNotifier {
 
   void delete(index, BuildContext context) async {
     list.removeAt(index);
-    await context.dependency.shp
-        .setStringList(Constants.history, list.reversed.toList());
-    notifyListeners();
-  }
-
-  void deleteAll(BuildContext context) async {
-    list.clear();
-    await context.dependency.shp.setStringList(Constants.history, list);
+    await context.dependency.shp.setStringList(Constants.history, list.reversed.toList());
     notifyListeners();
   }
 }

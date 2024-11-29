@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,17 +10,17 @@ import '../../../common/utils/extensions/context_extension.dart';
 import '../../../common/widgets/my_dialog.dart';
 import '../widgets/my_input.dart';
 
-part '../controller/circle_screen_controller.dart';
+part '../controller/rectangle_screen_controller.dart';
 
-class CircleScreen extends StatefulWidget {
-  const CircleScreen({super.key});
+class RectangleScreen extends StatefulWidget {
+  const RectangleScreen({super.key});
 
   @override
-  State<CircleScreen> createState() => _CircleScreenState();
+  State<RectangleScreen> createState() => _RectangleScreenState();
 }
 
-class _CircleScreenState extends State<CircleScreen>
-    with CircleScreenController {
+class _RectangleScreenState extends State<RectangleScreen>
+    with RectangleScreenController {
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -36,7 +35,7 @@ class _CircleScreenState extends State<CircleScreen>
           ),
           leadingWidth: 60,
           title: Text(
-            context.lang.circle,
+            context.lang.rectangle,
             style: context.textTheme.titleLarge,
             overflow: TextOverflow.ellipsis,
           ),
@@ -71,7 +70,7 @@ class _CircleScreenState extends State<CircleScreen>
                     Radius.circular(30),
                   ),
                   child: Image(
-                    image: const AssetImage(AppImages.circleExample),
+                    image: const AssetImage(AppImages.rectangleExample),
                     colorBlendMode: BlendMode.modulate,
                     color: context.colors.secondary,
                   ),
@@ -79,11 +78,11 @@ class _CircleScreenState extends State<CircleScreen>
               ),
               const SizedBox(height: 30),
               MyInput(
-                focusNode: focusNodeD,
-                hintText: context.lang.sideD,
-                controller: controllerD,
+                focusNode: focusNodeA,
+                hintText: context.lang.sideA,
+                controller: controllerA,
                 validator: (p0) {
-                  if (controllerD.text.isEmpty) {
+                  if (controllerA.text.isEmpty) {
                     return context.lang.pleaseFill;
                   }
                   return null;
@@ -114,7 +113,7 @@ class _CircleScreenState extends State<CircleScreen>
                 },
                 isNext: false,
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: MediaQuery.viewPaddingOf(context).bottom),
             ],
           ),
         ),
@@ -123,14 +122,14 @@ class _CircleScreenState extends State<CircleScreen>
             if (_formKey.currentState?.validate() ?? false) {
               const ro = 7850;
               final s = double.parse(controllerS.text.trim());
-              final d = double.parse(controllerD.text.trim());
+              final a = double.parse(controllerA.text.trim());
               final l = double.parse(controllerL.text.trim());
-              final result = pi * ro * s * (d - s) * l / 1000000;
+              final result = ro / 7850 * 0.0157 * s * (2 * a - 2.86 * s) * l;
               Map<String, String> map = {
-                "type": 'circular',
+                "type": 'rectangle',
                 "ro": ro.toString(),
                 "s": s.toString(),
-                "d": d.toString(),
+                "a": a.toString(),
                 "l": l.toString(),
                 "result": result.toString(),
                 "time": DateTime.now().millisecondsSinceEpoch.toString(),

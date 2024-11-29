@@ -43,6 +43,7 @@ class _RectangleScreenState extends State<RectangleScreen>
         ),
         body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
+          controller: scrollController,
           child: Column(
             children: [
               DecoratedBox(
@@ -77,6 +78,7 @@ class _RectangleScreenState extends State<RectangleScreen>
               ),
               const SizedBox(height: 30),
               MyInput(
+                focusNode: focusNodeA,
                 hintText: context.lang.sideA,
                 controller: controllerA,
                 validator: (p0) {
@@ -88,6 +90,7 @@ class _RectangleScreenState extends State<RectangleScreen>
               ),
               const SizedBox(height: 20),
               MyInput(
+                focusNode: focusNodeS,
                 hintText: context.lang.sideS,
                 controller: controllerS,
                 validator: (p0) {
@@ -99,6 +102,7 @@ class _RectangleScreenState extends State<RectangleScreen>
               ),
               const SizedBox(height: 20),
               MyInput(
+                focusNode: focusNodeL,
                 hintText: context.lang.length,
                 controller: controllerL,
                 validator: (p0) {
@@ -107,7 +111,9 @@ class _RectangleScreenState extends State<RectangleScreen>
                   }
                   return null;
                 },
+                isNext: false,
               ),
+              const SizedBox(height: 20),
             ],
           ),
         ),

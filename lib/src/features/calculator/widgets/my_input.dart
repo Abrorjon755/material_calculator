@@ -5,14 +5,18 @@ import '../../../common/utils/extensions/context_extension.dart';
 class MyInput extends StatelessWidget {
   const MyInput({
     super.key,
+    this.focusNode,
     required this.hintText,
     required this.controller,
     this.validator,
+    this.isNext = true,
   });
 
+  final FocusNode? focusNode;
   final String hintText;
   final TextEditingController controller;
   final String? Function(String?)? validator;
+  final bool isNext;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +62,9 @@ class MyInput extends StatelessWidget {
             horizontal: 20,
           ),
           child: TextFormField(
+            focusNode: focusNode,
+            textInputAction:
+                isNext ? TextInputAction.next : TextInputAction.done,
             onChanged: (value) {
               if (double.tryParse(value) == null) {
                 controller.text =
