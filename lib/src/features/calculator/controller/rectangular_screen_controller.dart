@@ -5,21 +5,28 @@ mixin RectangularScreenController on State<RectangularScreen> {
   late final TextEditingController controllerB;
   late final TextEditingController controllerS;
   late final TextEditingController controllerL;
-
-  late final ScrollController scrollController;
   late final FocusNode focusNodeA;
   late final FocusNode focusNodeB;
   late final FocusNode focusNodeS;
   late final FocusNode focusNodeL;
+  late final ScrollController scrollController;
 
   final _formKey = GlobalKey<FormState>();
 
   void focus() {
-    if (focusNodeA.hasFocus || focusNodeS.hasFocus || focusNodeL.hasFocus) {
-      scrollController.animateTo(
-        scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
+    if (focusNodeA.hasFocus ||
+        focusNodeB.hasFocus ||
+        focusNodeS.hasFocus ||
+        focusNodeL.hasFocus) {
+      Future.delayed(
+        const Duration(milliseconds: 400),
+        () {
+          scrollController.animateTo(
+            scrollController.position.maxScrollExtent,
+            duration: const Duration(milliseconds: 100),
+            curve: Curves.easeInOut,
+          );
+        },
       );
     }
   }
@@ -31,11 +38,11 @@ mixin RectangularScreenController on State<RectangularScreen> {
     controllerB = TextEditingController();
     controllerS = TextEditingController();
     controllerL = TextEditingController();
-    focusNodeA = FocusNode();
-    focusNodeB = FocusNode();
-    focusNodeS = FocusNode();
-    focusNodeL = FocusNode();
-    scrollController = ScrollController()..addListener(focus);
+    focusNodeA = FocusNode()..addListener(focus);
+    focusNodeB = FocusNode()..addListener(focus);
+    focusNodeS = FocusNode()..addListener(focus);
+    focusNodeL = FocusNode()..addListener(focus);
+    scrollController = ScrollController();
   }
 
   @override

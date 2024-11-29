@@ -42,82 +42,84 @@ class _CircleScreenState extends State<CircleScreen>
           ),
           centerTitle: true,
         ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          controller: scrollController,
-          child: Column(
-            children: [
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(30),
+        body: LayoutBuilder(
+            builder: (context, constraints) => SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  controller: scrollController,
+                  child: Column(
+                    children: [
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(30),
+                          ),
+                          color: context.colors.surface,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 30,
+                              offset: const Offset(-20, -20),
+                              color: context.colors.surfaceContainerLowest,
+                            ),
+                            BoxShadow(
+                              blurRadius: 30,
+                              offset: const Offset(20, 20),
+                              color: context.colors.surfaceContainerHighest,
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(30),
+                          ),
+                          child: Image(
+                            image: const AssetImage(AppImages.circleExample),
+                            colorBlendMode: BlendMode.modulate,
+                            color: context.colors.secondary,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      MyInput(
+                        focusNode: focusNodeD,
+                        hintText: context.lang.sideD,
+                        controller: controllerD,
+                        validator: (p0) {
+                          if (controllerD.text.isEmpty) {
+                            return context.lang.pleaseFill;
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      MyInput(
+                        focusNode: focusNodeS,
+                        hintText: context.lang.sideS,
+                        controller: controllerS,
+                        validator: (p0) {
+                          if (controllerS.text.isEmpty) {
+                            return context.lang.pleaseFill;
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      MyInput(
+                        focusNode: focusNodeL,
+                        hintText: context.lang.length,
+                        controller: controllerL,
+                        validator: (p0) {
+                          if (controllerL.text.isEmpty) {
+                            return context.lang.pleaseFill;
+                          }
+                          return null;
+                        },
+                        isNext: false,
+                      ),
+                      SizedBox(
+                          height: MediaQuery.viewPaddingOf(context).bottom),
+                    ],
                   ),
-                  color: context.colors.surface,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 30,
-                      offset: const Offset(-20, -20),
-                      color: context.colors.surfaceContainerLowest,
-                    ),
-                    BoxShadow(
-                      blurRadius: 30,
-                      offset: const Offset(20, 20),
-                      color: context.colors.surfaceContainerHighest,
-                    ),
-                  ],
-                ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(30),
-                  ),
-                  child: Image(
-                    image: const AssetImage(AppImages.circleExample),
-                    colorBlendMode: BlendMode.modulate,
-                    color: context.colors.secondary,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 30),
-              MyInput(
-                focusNode: focusNodeD,
-                hintText: context.lang.sideD,
-                controller: controllerD,
-                validator: (p0) {
-                  if (controllerD.text.isEmpty) {
-                    return context.lang.pleaseFill;
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
-              MyInput(
-                focusNode: focusNodeS,
-                hintText: context.lang.sideS,
-                controller: controllerS,
-                validator: (p0) {
-                  if (controllerS.text.isEmpty) {
-                    return context.lang.pleaseFill;
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 20),
-              MyInput(
-                focusNode: focusNodeL,
-                hintText: context.lang.length,
-                controller: controllerL,
-                validator: (p0) {
-                  if (controllerL.text.isEmpty) {
-                    return context.lang.pleaseFill;
-                  }
-                  return null;
-                },
-                isNext: false,
-              ),
-              const SizedBox(height: 20),
-            ],
-          ),
-        ),
+                )),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             if (_formKey.currentState?.validate() ?? false) {

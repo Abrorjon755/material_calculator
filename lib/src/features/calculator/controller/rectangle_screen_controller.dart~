@@ -1,20 +1,20 @@
-part of '../screen/circle_screen.dart';
+part of '../screen/rectangle_screen.dart';
 
-mixin CircleScreenController on State<CircleScreen> {
-  late final TextEditingController controllerD;
+mixin RectangleScreenController on State<RectangleScreen> {
+  late final TextEditingController controllerA;
   late final TextEditingController controllerS;
   late final TextEditingController controllerL;
-  late final ScrollController scrollController;
-  late final FocusNode focusNodeD;
+  late final FocusNode focusNodeA;
   late final FocusNode focusNodeS;
   late final FocusNode focusNodeL;
+  late final ScrollController scrollController;
 
   final _formKey = GlobalKey<FormState>();
 
   void focus() {
-    if (focusNodeD.hasFocus || focusNodeS.hasFocus || focusNodeL.hasFocus) {
+    if (focusNodeA.hasFocus || focusNodeS.hasFocus || focusNodeL.hasFocus) {
       Future.delayed(
-        const Duration(milliseconds: 400),
+        const Duration(milliseconds: 300),
         () {
           scrollController.animateTo(
             scrollController.position.maxScrollExtent,
@@ -29,21 +29,21 @@ mixin CircleScreenController on State<CircleScreen> {
   @override
   void initState() {
     super.initState();
-    controllerD = TextEditingController();
+    controllerA = TextEditingController();
     controllerS = TextEditingController();
     controllerL = TextEditingController();
-    focusNodeD = FocusNode()..addListener(focus);
+    focusNodeA = FocusNode()..addListener(focus);
     focusNodeS = FocusNode()..addListener(focus);
     focusNodeL = FocusNode()..addListener(focus);
-    scrollController = ScrollController()..addListener(focus);
+    scrollController = ScrollController();
   }
 
   @override
   void dispose() {
-    controllerD.dispose();
+    controllerA.dispose();
     controllerS.dispose();
     controllerL.dispose();
-    focusNodeD.dispose();
+    focusNodeA.dispose();
     focusNodeS.dispose();
     focusNodeL.dispose();
     scrollController.dispose();
