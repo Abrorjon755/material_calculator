@@ -15,7 +15,7 @@ mixin RectangularScreenController on State<RectangularScreen> {
   final _formKey = GlobalKey<FormState>();
 
   void focus() {
-    if (focusNodeA.hasFocus && focusNodeS.hasFocus && focusNodeL.hasFocus) {
+    if (focusNodeA.hasFocus || focusNodeS.hasFocus || focusNodeL.hasFocus) {
       scrollController.animateTo(
         scrollController.position.maxScrollExtent,
         duration: const Duration(milliseconds: 300),

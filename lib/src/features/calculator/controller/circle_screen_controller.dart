@@ -12,7 +12,7 @@ mixin CircleScreenController on State<CircleScreen> {
   final _formKey = GlobalKey<FormState>();
 
   void focus() {
-    if (focusNodeD.hasFocus && focusNodeS.hasFocus && focusNodeL.hasFocus) {
+    if (focusNodeD.hasFocus || focusNodeS.hasFocus || focusNodeL.hasFocus) {
       scrollController.animateTo(
         scrollController.position.maxScrollExtent,
         duration: const Duration(milliseconds: 300),
