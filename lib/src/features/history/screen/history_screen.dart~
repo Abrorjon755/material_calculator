@@ -9,7 +9,6 @@ import 'package:provider/provider.dart';
 import '../../../common/utils/extensions/context_extension.dart';
 import '../../../common/widgets/my_dialog.dart';
 import '../provider/history_provider.dart';
-import '../widgets/delete_dialog.dart';
 import '../widgets/my_text.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -34,15 +33,7 @@ class HistoryScreen extends StatelessWidget {
             centerTitle: true,
             actions: [
               IconButton(
-                onPressed: () async {
-                  final check = await showDialog<bool>(
-                    context: context,
-                    builder: (context) => const DeleteDialog(),
-                  );
-                  if(check ?? false) {
-                    value.deleteAll(context);
-                  }
-                },
+                onPressed: () => value.deleteAll(context),
                 icon: FaIcon(
                   FontAwesomeIcons.trash,
                   color: context.colors.error,

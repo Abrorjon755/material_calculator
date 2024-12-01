@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "areYouSure": MessageLookupByLibrary.simpleMessage(
+            "Siz barcha tarixni o‘chirmoqchi ekaningizga aminmisiz?"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Yo\'q"),
         "circle": MessageLookupByLibrary.simpleMessage("Doira"),
+        "history": MessageLookupByLibrary.simpleMessage("Tarix"),
         "kg": MessageLookupByLibrary.simpleMessage(" KG"),
         "language": MessageLookupByLibrary.simpleMessage("Til"),
         "length": MessageLookupByLibrary.simpleMessage("Uzunlik (m)"),
@@ -38,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sideA": MessageLookupByLibrary.simpleMessage("A tomoni (mm)"),
         "sideB": MessageLookupByLibrary.simpleMessage("B tomoni (mm)"),
         "sideD": MessageLookupByLibrary.simpleMessage("D tomoni (mm)"),
-        "sideS": MessageLookupByLibrary.simpleMessage("S tomoni (mm)")
+        "sideS": MessageLookupByLibrary.simpleMessage("S tomoni (mm)"),
+        "yes": MessageLookupByLibrary.simpleMessage("Ha")
       };
 }

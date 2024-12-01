@@ -15,5 +15,8 @@
   "settings": "Settings",
   "language": "Language",
   "kg": " KG",
-  "history": "History"
+  "history": "History",
+  "areYouSure": "Are you sure that you are going delete all history?",
+  "cancel": "cancel",
+  "yes": "Yes"
 }

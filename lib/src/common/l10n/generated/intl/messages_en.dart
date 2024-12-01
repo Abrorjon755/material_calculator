@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "areYouSure": MessageLookupByLibrary.simpleMessage(
+            "Are you sure that you are going delete all history?"),
+        "cancel": MessageLookupByLibrary.simpleMessage("cancel"),
         "circle": MessageLookupByLibrary.simpleMessage("Circle"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "kg": MessageLookupByLibrary.simpleMessage(" KG"),
@@ -38,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sideA": MessageLookupByLibrary.simpleMessage("A side (mm)"),
         "sideB": MessageLookupByLibrary.simpleMessage("B side (mm)"),
         "sideD": MessageLookupByLibrary.simpleMessage("D side (mm)"),
-        "sideS": MessageLookupByLibrary.simpleMessage("S side (mm)")
+        "sideS": MessageLookupByLibrary.simpleMessage("S side (mm)"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes")
       };
 }

@@ -14,5 +14,9 @@
   "circle": "Doira",
   "settings": "Sozlamalar",
   "language": "Til",
-  "kg": " KG"
+  "kg": " KG",
+  "history": "Tarix",
+  "areYouSure": "Siz barcha tarixni o‘chirmoqchi ekaningizga aminmisiz?",
+  "cancel": "Yo'q",
+  "yes": "Ha"
 }

@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "areYouSure": MessageLookupByLibrary.simpleMessage(
+            "Вы уверены, что хотите удалить всю историю?"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "circle": MessageLookupByLibrary.simpleMessage("Круг"),
+        "history": MessageLookupByLibrary.simpleMessage("История"),
         "kg": MessageLookupByLibrary.simpleMessage(" КГ"),
         "language": MessageLookupByLibrary.simpleMessage("Язык"),
         "length": MessageLookupByLibrary.simpleMessage("Длина (м)"),
@@ -38,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sideA": MessageLookupByLibrary.simpleMessage("Сторона A (мм)"),
         "sideB": MessageLookupByLibrary.simpleMessage("Сторона B (мм)"),
         "sideD": MessageLookupByLibrary.simpleMessage("Сторона D (мм)"),
-        "sideS": MessageLookupByLibrary.simpleMessage("Сторона S (мм)")
+        "sideS": MessageLookupByLibrary.simpleMessage("Сторона S (мм)"),
+        "yes": MessageLookupByLibrary.simpleMessage("Да")
       };
 }

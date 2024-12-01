@@ -15,8 +15,8 @@
   "settings": "Настройки",
   "language": "Язык",
   "kg": " КГ",
-  "history": "История",
-  "areYouSure": "Вы уверены, что хотите удалить всю историю?",
-  "cancel": "Отмена",
-  "yes": "Да"
+  "history": "History",
+  "areYouSure": "Are you sure that you are going delete all history?",
+  "cancel": "cancel",
+  "yes": "Yes"
 }
